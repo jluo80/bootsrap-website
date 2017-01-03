@@ -1,0 +1,25 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>滨海金控</title> <meta name="description" content="滨海金控是一家综合性的创新型金融投资管理公司，总部位于广州CBD珠江新城，在北京、上海、深圳、东莞、南京、杭州等国内一线城市及全球主要经济中心均设有分支机构。滨海金控积极开拓海内外市场，随着业务不断拓展，辐射区域将越来越广，致力于成为市场金融市场的引领者。"> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.css"> <link rel="stylesheet" href="styles/main.css"> </head> <body ng-class="{true:'locked',false:''}[showPop]" ng-app="indexApp" ng-controller="MainCtrl" onselectstart="event.returnValue=false" ondragstart="window.event.returnValue=false"> <div ng-include="'views/page-header.html'"></div> <article class="mainBody"> <div ui-view ng-animate=""> <!--loading--> <div class="ui segment" style="height: 600px" ng-class="{true:'hidden',false:''}[isLoaded]"> <div class="ui active dimmer inverted"> <div class="ui indeterminate text loader large">正在加载....</div> </div> <p></p> </div> <!--loading end--> <!--错误提示--> <div class="ui modal"> <div class="header">很抱歉!</div> <div class="content"> <p>官网正在维护中，请稍后重试...</p> <p class="detail"></p> </div> </div> <!--错误提示end--> </div> </article> <div ng-include="'views/page-footer.html'"></div> <script src="scripts/vendor.js"></script> <script src="scripts/scripts.js"></script><!--合格投资者S-->
+<div ng-init="showPop=false" ng-if="showPop" style="display: block;" class="popLayer " id="hegetouzizherending">
+  <div class="popLayerCon touzizhe" id="#noticeCon">
+    <!-- <a class="close" title="关闭" href="javascript:;">X</a> -->
+    <h6>合格投资者认定</h6>
+    <div class="popLayerMainCon">
+      <p class="tipCon">根据《私募投资基金监督管理暂行办法》第四章第十四条规定："私募基金管理人、私募基金销售机构不得向合格投
+        资者之外的单位和个人募集资金，不得通过报刊、电台、电视、互联网等公众传播媒体或者讲座、报告会、分析会和布告、传单、手机短信、微信、博客和电子邮件
+        等方式，向不特定对象宣传推介。"</p>
+      <br>
+      <p class="tipCon">滨海基金谨遵《私募投资基金监督管理暂行办法》之规定，只向特定投资者展示私募基金产品信息，不构成任何投资推介建议。</p>
+      <p class="tipCon">您如有意了解私募投资基金且满足《私募投资基金监督管理暂行办法》关于"合规投资者"标准之规定，即：</p>
+      <ul>
+        <li ng-init="checked1=true" class="checkCon" ng-click="checked1=!checked1"><b class="checkBox" ng-class="{true:'checked',false:''}[checked1]"></b>具备相应风险识别能力和风险承担能力；</li>
+        <li ng-init="checked2=true" class="checkCon" ng-click="checked2=!checked2"><b class="checkBox" ng-class="{true:'checked',false:''}[checked2]"></b>净资产不低于1000万元的机构；</li>
+        <li ng-init="checked3=true" class="checkCon" ng-click="checked3=!checked3"><b class="checkBox" ng-class="{true:'checked',false:''}[checked3]"></b>金融类资产不低于300万元或者最近三年个人年均收入不低于50万元的个人。</li>
+      </ul>
+      <p class="tipCon textIndextNone">请您详细阅读本提示，并确认为合格投资者，方可进入页面获取私募基金相关展示信息。</p>
+    </div>
+    <div class="popLayerMainCon2" >
+      <a ng-click="closePop(checked1 && checked2 && checked3)" ng-class="{true:'',false:'disabled'}[checked1 && checked2 && checked3]" title="我知道了" href="javascript:;" class="button subagree" id="hegetouzizherendingBtn1" ng-disabled="checked1 && checked2 && checked3" >我知道了</a>
+      <!-- <span class="checkCon"><b class="checkBox checked"></b>记住我的选择</span> -->
+    </div>
+  </div>
+</div> </body> </html>
